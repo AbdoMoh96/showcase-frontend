@@ -3,8 +3,6 @@ import MediaBar from '../components/MediaBar'
 
 export const Route = createFileRoute('/contact')({ component: ContactPage })
 
-const iconTwitter = 'https://www.figma.com/api/mcp/asset/c3008e92-fb37-4000-b6a3-63b1a7a8141d'
-const iconDiscord = 'https://www.figma.com/api/mcp/asset/45407468-7542-4d5d-8dc7-26c53f66c93b'
 const iconEmail = 'https://www.figma.com/api/mcp/asset/9476ae69-51ab-43c5-bff7-56e04c2b20dc'
 
 function ContactPage() {
@@ -17,29 +15,33 @@ function ContactPage() {
           <span className="text-[var(--primary)]">/</span>
           <span className="text-white">contacts</span>
         </div>
-        <p className="mt-2 text-sm text-white">Who am i?</p>
+        <p className="mt-2 text-sm text-white">Let’s talk</p>
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_1fr]">
           <p className="text-sm leading-6 text-[var(--text)]">
-            I'm interested in freelance opportunities. However, if you have other request or
-            question, don't hesitate to contact me
+            Open to building scalable, high-performance products across fintech, insurance, and
+            AI domains. Reach out to discuss fullstack development, performance optimization,
+            and end-to-end delivery.
           </p>
           <div className="flex flex-wrap gap-4">
             <div className="card-border p-4 text-sm">
-              <p className="text-white">Support me here</p>
-              <p className="mt-2 text-[var(--text)]">4149500120690030</p>
+              <p className="text-white">Contact</p>
+              <div className="mt-3 space-y-2 text-[var(--text)]">
+                <p>+2 011 212 26689</p>
+                <a href="mailto:abdo.moh96@outlook.com" className="underline">
+                  abdo.moh96@outlook.com
+                </a>
+              </div>
             </div>
             <div className="card-border p-4 text-sm">
-              <p className="text-white">Message me here</p>
-              <div className="mt-3 space-y-2">
-                <div className="flex items-center gap-2">
-                  <img src={iconDiscord} alt="Discord" className="h-6 w-6" />
-                  <span>Elias#1234</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <img src={iconEmail} alt="Email" className="h-6 w-6" />
-                  <span>elias@elias-dev.ml</span>
-                </div>
+              <p className="text-white">Social</p>
+              <div className="mt-3 space-y-2 text-[var(--text)]">
+                <a href="https://www.linkedin.com/in/abdo-moh96/" className="underline">
+                  linkedin.com/in/abdo-moh96
+                </a>
+                <a href="https://github.com/AbdoMoh96" className="underline">
+                  github.com/AbdoMoh96
+                </a>
               </div>
             </div>
           </div>
@@ -83,17 +85,11 @@ function ContactPage() {
       <section className="page-wrap mt-16">
         <div className="section-title">
           <span className="text-[var(--primary)]">#</span>
-          <span className="text-white">all-media</span>
+          <span className="text-white">availability</span>
         </div>
-        <div className="mt-6 flex gap-8 text-sm">
-          <div className="flex items-center gap-2">
-            <img src={iconTwitter} alt="Twitter" className="h-6 w-6" />
-            <span>@elias</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <img src={iconTwitter} alt="Twitter" className="h-6 w-6" />
-            <span>@elias</span>
-          </div>
+        <div className="mt-6 flex items-center gap-2 text-sm text-[var(--text)]">
+          <img src={iconEmail} alt="Email" className="h-6 w-6" />
+          <span>Available for collaboration and product delivery.</span>
         </div>
       </section>
     </main>

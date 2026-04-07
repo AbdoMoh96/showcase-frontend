@@ -16,92 +16,69 @@ const imgProject5 =
 
 const completeApps = [
   {
-    title: 'ChertNodes',
-    description: 'Minecraft servers hosting',
-    tags: ['HTML', 'SCSS', 'Python', 'Flask'],
+    title: 'Beltone MiddleLayer Laravel API',
+    description: 'MiddleLayer Laravel API',
+    tags: ['Laravel', 'API'],
     image: imgProject1,
-    actions: ['Live <~>', 'Cached >='],
+    actions: [],
   },
   {
-    title: 'Kahoot Answers Viewer',
-    description: 'Get answers to your kahoot quiz',
-    tags: ['CSS', 'Express', 'Node.js'],
+    title: 'Beltone Website',
+    description: 'Corporate website',
+    tags: ['Web', 'Frontend'],
     image: imgProject2,
-    actions: ['Live <~>'],
+    actions: [{ label: 'Live', href: 'https://www.beltoneholding.com/' }],
   },
   {
-    title: 'ProtectX',
-    description: 'Discord anti-crash bot',
-    tags: ['React', 'Express', 'Discord.js', 'Node.js'],
+    title: '7EVEN Web App',
+    description: 'Customer web application',
+    tags: ['Web App'],
     image: imgProject3,
-    actions: ['Cached >='],
+    actions: [{ label: 'Live', href: 'https://www.seven.eg/' }],
   },
   {
-    title: 'Kotik Bot',
-    description: 'Multi-functional discord bot',
-    tags: ['HTML', 'CSS', 'JS'],
+    title: 'Yalla Super Mall',
+    description: 'E-commerce platform',
+    tags: ['E-commerce'],
     image: imgProject4,
-    actions: ['Live <~>'],
+    actions: [{ label: 'Live', href: 'https://yallasupermall.com/' }],
   },
   {
-    title: 'Portfolio',
-    description: "You're using it rn",
-    tags: ['Vue', 'TS', 'Less'],
+    title: 'Shory Insurance',
+    description: 'Insurance platform',
+    tags: ['Insurance'],
     image: imgProject5,
-    actions: ['Github <~>'],
+    actions: [{ label: 'Live', href: 'https://www.shory.com/' }],
+  },
+  {
+    title: 'Aber Insurance',
+    description: 'Insurance platform',
+    tags: ['Insurance'],
+    image: imgProject1,
+    actions: [{ label: 'Live', href: 'https://uaeaber.com/en' }],
+  },
+  {
+    title: 'Wittify Landing',
+    description: 'Product landing page',
+    tags: ['AI', 'Landing'],
+    image: imgProject2,
+    actions: [{ label: 'Live', href: 'https://wittify.ai/' }],
+  },
+  {
+    title: 'Wittify Dashboard',
+    description: 'Product dashboard',
+    tags: ['AI', 'Dashboard'],
+    image: imgProject3,
+    actions: [{ label: 'Live', href: 'https://app.wittify.ai/' }],
   },
 ]
 
-const smallProjects = [
-  {
-    title: 'Bot boilerplate',
-    description: 'Start creating scalable discord.js bot with typescript in seconds',
-    tags: ['Discord.js', 'TS', 'JS'],
-    action: 'Github <~>',
-  },
-  {
-    title: 'My blog',
-    description: 'Front-end of my future blog website written in vue',
-    tags: ['Vue', 'CSS', 'JS'],
-    action: 'Github <~>',
-  },
-  {
-    title: 'Chess pro',
-    description: 'Figma landing page about service for viewing chess tournaments',
-    tags: ['Figma'],
-    action: 'Figma <~>',
-  },
-  {
-    title: 'Crash protect website',
-    description: 'Figma template for website about anti-raid, anti-crash discord bot',
-    tags: ['Figma'],
-    action: 'Figma <~>',
-  },
-  {
-    title: 'CSS experiments',
-    description: 'Collection of my different little projects in css',
-    tags: ['HTML', 'CSS'],
-    action: 'Live <~>',
-  },
-  {
-    title: 'Web Dev nvim config',
-    description: 'Config for neovim perfect for web developer',
-    tags: ['Lua', 'NeoVim'],
-    action: 'Github <~>',
-  },
-  {
-    title: 'Ooku',
-    description: 'Simple link shortener with auth',
-    tags: ['Python', 'Quart', 'HTML'],
-    action: 'Live <~>',
-  },
-  {
-    title: 'School website',
-    description: 'Figma template website for my school',
-    tags: ['Figma'],
-    action: 'Figma <~>',
-  },
-]
+const smallProjects: {
+  title: string
+  description: string
+  tags: string[]
+  action: { label: string; href: string }
+}[] = []
 
 function ProjectCard({
   title,
@@ -114,7 +91,7 @@ function ProjectCard({
   description: string
   tags: string[]
   image: string
-  actions: string[]
+  actions: { label: string; href: string }[]
 }) {
   return (
     <div className="card-border flex w-full flex-col sm:w-[330px]">
@@ -129,17 +106,21 @@ function ProjectCard({
       <div className="flex flex-col gap-4 p-4">
         <p className="text-2xl text-white">{title}</p>
         <p className="text-sm text-[var(--text)]">{description}</p>
-        <div className="flex flex-wrap gap-4">
-          {actions.map((action) => (
-            <button
-              key={action}
-              className="card-border px-4 py-2 text-sm text-white"
-              type="button"
-            >
-              {action}
-            </button>
-          ))}
-        </div>
+        {actions.length > 0 ? (
+          <div className="flex flex-wrap gap-4">
+            {actions.map((action) => (
+              <a
+                key={action.href}
+                className="card-border px-4 py-2 text-sm text-white"
+                href={action.href}
+                rel="noreferrer"
+                target="_blank"
+              >
+                {action.label}
+              </a>
+            ))}
+          </div>
+        ) : null}
       </div>
     </div>
   )
@@ -154,7 +135,7 @@ function SmallProjectCard({
   title: string
   description: string
   tags: string[]
-  action: string
+  action: { label: string; href: string }
 }) {
   return (
     <div className="card-border flex w-full flex-col sm:w-[330px]">
@@ -166,9 +147,14 @@ function SmallProjectCard({
       <div className="border-t border-[var(--line)] p-4">
         <p className="text-2xl text-white">{title}</p>
         <p className="mt-2 text-sm text-[var(--text)]">{description}</p>
-        <button className="card-border mt-4 px-4 py-2 text-sm text-white" type="button">
-          {action}
-        </button>
+        <a
+          className="card-border mt-4 inline-flex px-4 py-2 text-sm text-white"
+          href={action.href}
+          rel="noreferrer"
+          target="_blank"
+        >
+          {action.label}
+        </a>
       </div>
     </div>
   )
@@ -199,17 +185,19 @@ function ProjectsPage() {
         </div>
       </section>
 
-      <section className="page-wrap mt-20">
-        <div className="section-title">
-          <span className="text-[var(--primary)]">#</span>
-          <span className="text-white">small-projects</span>
-        </div>
-        <div className="mt-8 flex flex-wrap gap-4">
-          {smallProjects.map((project) => (
-            <SmallProjectCard key={project.title} {...project} />
-          ))}
-        </div>
-      </section>
+      {smallProjects.length > 0 ? (
+        <section className="page-wrap mt-20">
+          <div className="section-title">
+            <span className="text-[var(--primary)]">#</span>
+            <span className="text-white">small-projects</span>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-4">
+            {smallProjects.map((project) => (
+              <SmallProjectCard key={project.title} {...project} />
+            ))}
+          </div>
+        </section>
+      ) : null}
     </main>
   )
 }

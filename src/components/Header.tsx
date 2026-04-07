@@ -4,8 +4,7 @@ import { useState } from 'react'
 const logoImg =
   'https://www.figma.com/api/mcp/asset/0e457d51-3248-4b8f-b8b8-c133cbbfb689'
 const iconGithub = 'https://www.figma.com/api/mcp/asset/47878ef0-000a-4603-8b86-d2f90ded4a84'
-const iconDribble = 'https://www.figma.com/api/mcp/asset/3b454917-6be6-4c79-b9ff-268916ed5a0c'
-const iconFigma = 'https://www.figma.com/api/mcp/asset/5f1bf715-53b2-42af-ae5e-c7fba7557f21'
+const iconLinkedIn = 'https://www.figma.com/api/mcp/asset/5f1bf715-53b2-42af-ae5e-c7fba7557f21'
 
 const NavLink = ({ to, label }: { to: string; label: string }) => (
   <Link
@@ -26,7 +25,7 @@ export default function Header() {
       <div className="page-wrap flex items-end justify-between pb-2 pt-6 md:pt-8">
         <Link to="/" className="flex items-center gap-2 text-white">
           <img src={logoImg} alt="" className="h-4 w-4" />
-          <span className="text-base font-semibold">Elias</span>
+          <span className="text-base font-semibold">Abdelrahman</span>
         </Link>
 
         <nav className="hidden items-center gap-8 text-base md:flex">
@@ -75,9 +74,12 @@ export default function Header() {
             </div>
 
             <div className="mt-6 flex items-center gap-3">
-              <img src={iconGithub} alt="Github" className="h-8 w-8" />
-              <img src={iconDribble} alt="Dribble" className="h-8 w-8" />
-              <img src={iconFigma} alt="Figma" className="h-8 w-8" />
+              <a href="https://github.com/AbdoMoh96" aria-label="GitHub">
+                <img src={iconGithub} alt="GitHub" className="h-8 w-8" />
+              </a>
+              <a href="https://www.linkedin.com/in/abdo-moh96/" aria-label="LinkedIn">
+                <img src={iconLinkedIn} alt="LinkedIn" className="h-8 w-8" />
+              </a>
             </div>
           </div>
         </div>

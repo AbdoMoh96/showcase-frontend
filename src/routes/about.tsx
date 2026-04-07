@@ -6,25 +6,38 @@ export const Route = createFileRoute('/about')({ component: AboutPage })
 const aboutImage =
   'https://www.figma.com/api/mcp/asset/7d3db05e-b306-422b-a8c2-7b63b329af3c'
 
-const factLines = [
-  "I like winter more than summer",
-  "I often bike with my friends",
-  "I like pizza and pasta",
-  "I was in Egypt, Poland and Turkey",
-  "My favorite movie is The Green Mile",
-  "I am still in school",
-  "I don't have any siblings",
-]
+const summary =
+  'Senior Fullstack Developer with 7+ years of experience delivering scalable, high-performance web applications across fintech, insurance, and AI domains. Specialized in Frontend (Next.js, React.js, Angular) and Backend (Node.js, .net, NestJS, Laravel, PHP). Proven track record in building end-to-end systems, integrating complex APIs, and optimizing performance for millions of users. Experienced in DevOps, CI/CD, and cloud deployment (Linux VPS, Cloudflare, Docker). Passionate about building user-centric products and leveraging modern technologies to solve real-world problems.'
 
 const skillBlocks = [
-  { title: 'Languages', lines: ['TypeScript Lua', 'Python JavaScript'] },
-  { title: 'Other', lines: ['HTML CSS EJS SCSS', 'REST Jinja'] },
   {
-    title: 'Tools',
-    lines: ['VSCode Neovim Linux', 'Figma XFCE Arch', 'Git Font Awesome', 'KDE fish'],
+    title: 'Frontend Development',
+    lines: ['Angular, React.js, Next.js, Redux, Tailwind, Sass'],
   },
-  { title: 'Databases', lines: ['SQLite PostgreSQL', 'Mongo'] },
-  { title: 'Frameworks', lines: ['React Vue', 'Disnake Discord.js', 'Flask Express.js'] },
+  {
+    title: 'Backend Development',
+    lines: ['Node.js, .net, NestJS, Laravel, Lumen, PHP'],
+  },
+  {
+    title: 'Web Technologies',
+    lines: ['HTML, CSS, JavaScript, TypeScript'],
+  },
+  {
+    title: 'DevOps & Tools',
+    lines: ['Git, GitHub Workflows, Docker, CI/CD, Cloudflare, Linux VPS'],
+  },
+  {
+    title: 'Other',
+    lines: ['Chrome/Firefox Extensions, REST APIs, Microservices'],
+  },
+  {
+    title: 'Languages',
+    lines: ['Arabic (Native), English (Fluent)'],
+  },
+  {
+    title: 'Soft Skills',
+    lines: ['Problem Solving, Leadership, Communication, Agile, Team Collaboration'],
+  },
 ]
 
 function AboutPage() {
@@ -37,21 +50,12 @@ function AboutPage() {
           <span className="text-[var(--primary)]">/</span>
           <span className="text-white">about-me</span>
         </div>
-        <p className="mt-2 text-sm text-white">Who am i?</p>
+        <p className="mt-2 text-sm text-white">Summary</p>
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_360px]">
           <div className="text-sm leading-6 text-[var(--text)]">
-            <p>Hello, i'm Elias!</p>
-            <p>
-              I'm a self-taught front-end developer based in Kyiv, Ukraine. I can develop
-              responsive websites from scratch and raise them into modern user-friendly web
-              experiences.
-            </p>
-            <p>
-              Transforming my creativity and knowledge into a websites has been my passion for
-              over a year. I have been helping various clients to establish their presence
-              online. I always strive to learn about the newest technologies and frameworks.
-            </p>
+            <p>Hello!</p>
+            <p>{summary}</p>
           </div>
           <div className="relative">
             <img src={aboutImage} alt="" className="relative z-10 h-auto w-full" />
@@ -85,12 +89,12 @@ function AboutPage() {
       <section className="page-wrap mt-20">
         <div className="section-title">
           <span className="text-[var(--primary)]">#</span>
-          <span className="text-white">my-fun-facts</span>
+          <span className="text-white">domains</span>
         </div>
         <div className="mt-6 flex flex-wrap gap-4">
-          {factLines.map((fact) => (
-            <div key={fact} className="card-border px-3 py-2 text-sm text-[var(--text)]">
-              {fact}
+          {['Fintech', 'Insurance', 'AI'].map((domain) => (
+            <div key={domain} className="card-border px-3 py-2 text-sm text-[var(--text)]">
+              {domain}
             </div>
           ))}
         </div>
