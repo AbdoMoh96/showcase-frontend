@@ -44,6 +44,40 @@ function ContactPage() {
             </div>
           </div>
         </div>
+
+        <form className="mt-12 max-w-[880px]" onSubmit={(event) => event.preventDefault()}>
+          <div className="grid gap-4 md:grid-cols-2">
+            <input
+              className="card-border w-full bg-transparent px-4 py-3 text-sm text-white placeholder:text-[var(--text)] outline-none"
+              type="text"
+              name="name"
+              placeholder="Name"
+            />
+            <input
+              className="card-border w-full bg-transparent px-4 py-3 text-sm text-white placeholder:text-[var(--text)] outline-none"
+              type="email"
+              name="email"
+              placeholder="Email"
+            />
+          </div>
+          <input
+            className="card-border mt-4 w-full bg-transparent px-4 py-3 text-sm text-white placeholder:text-[var(--text)] outline-none"
+            type="text"
+            name="title"
+            placeholder="Title"
+          />
+          <textarea
+            className="card-border mt-4 min-h-[180px] w-full resize-none bg-transparent px-4 py-3 text-sm text-white placeholder:text-[var(--text)] outline-none"
+            name="message"
+            placeholder="Message"
+          />
+          <button
+            className="mt-4 inline-flex border border-[var(--primary)] px-5 py-2 text-sm text-white"
+            type="submit"
+          >
+            Send
+          </button>
+        </form>
       </section>
 
       <section className="page-wrap mt-16">
