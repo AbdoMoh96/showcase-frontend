@@ -117,7 +117,7 @@ function ProjectCard({
   actions: string[]
 }) {
   return (
-    <div className="card-border flex w-[330px] flex-col">
+    <div className="card-border flex w-full flex-col sm:w-[330px]">
       <div className="h-[201px] border-b border-[var(--line)]">
         <img src={image} alt="" className="h-full w-full object-cover" />
       </div>
@@ -157,7 +157,7 @@ function SmallProjectCard({
   action: string
 }) {
   return (
-    <div className="card-border flex w-[330px] flex-col">
+    <div className="card-border flex w-full flex-col sm:w-[330px]">
       <div className="flex flex-wrap gap-2 p-2 text-sm text-[var(--text)]">
         {tags.map((tag) => (
           <span key={tag}>{tag}</span>

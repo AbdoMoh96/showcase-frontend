@@ -4,7 +4,7 @@ const iconFigma = 'https://www.figma.com/api/mcp/asset/5f1bf715-53b2-42af-ae5e-c
 
 export default function MediaBar() {
   return (
-    <div className="absolute left-4 top-0 flex flex-col items-center gap-2">
+    <div className="absolute left-4 top-0 hidden flex-col items-center gap-2 md:flex">
       <div className="h-48 w-px bg-[var(--line)]" />
       <div className="flex flex-col gap-2">
         <img src={iconGithub} alt="Github" className="h-8 w-8" />

@@ -6,9 +6,9 @@ const logoImg = 'https://www.figma.com/api/mcp/asset/0e457d51-3248-4b8f-b8b8-c13
 export default function Footer() {
   return (
     <footer className="mt-20 border-t border-[var(--line)] pb-8 pt-8">
-      <div className="page-wrap flex items-start justify-between gap-8 text-sm">
+      <div className="page-wrap flex flex-col gap-8 text-sm md:flex-row md:items-start md:justify-between">
         <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:gap-4">
             <div className="flex items-center gap-2">
               <img src={logoImg} alt="" className="h-4 w-4" />
               <span className="text-white">Elias</span>

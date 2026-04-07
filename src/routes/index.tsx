@@ -52,7 +52,7 @@ function ProjectCard({
   actions: string[]
 }) {
   return (
-    <div className="card-border flex w-[330px] flex-col">
+    <div className="card-border flex w-full flex-col sm:w-[330px]">
       <div className="h-[201px] border-b border-[var(--line)]">
         <img src={image} alt="" className="h-full w-full object-cover" />
       </div>
@@ -155,14 +155,14 @@ function HomePage() {
           <div className="ml-4 h-px w-28 bg-[var(--line)]" />
         </div>
         <div className="mt-8 grid gap-6 lg:grid-cols-[360px_1fr]">
-          <div className="relative">
+          <div className="relative hidden lg:block">
             <div className="dots-grid absolute left-0 top-8 h-16 w-16" />
             <div className="card-border absolute left-16 top-0 h-20 w-20" />
             <div className="card-border absolute left-40 top-24 h-14 w-14" />
             <div className="dots-grid absolute left-28 top-36 h-16 w-16" />
             <div className="card-border absolute left-20 top-44 h-28 w-28" />
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 title: 'Languages',
@@ -227,8 +227,8 @@ function HomePage() {
           </div>
           <div className="relative">
             <img src={aboutImage} alt="" className="relative z-10 h-auto w-full" />
-            <div className="dots-grid absolute right-2 top-4 h-20 w-20" />
-            <div className="card-border absolute right-10 bottom-8 h-14 w-14" />
+            <div className="dots-grid absolute right-2 top-4 hidden h-20 w-20 md:block" />
+            <div className="card-border absolute right-10 bottom-8 hidden h-14 w-14 md:block" />
             <div className="h-px w-64 bg-[var(--primary)]" />
           </div>
         </div>

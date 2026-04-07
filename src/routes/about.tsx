@@ -55,8 +55,8 @@ function AboutPage() {
           </div>
           <div className="relative">
             <img src={aboutImage} alt="" className="relative z-10 h-auto w-full" />
-            <div className="dots-grid absolute right-4 top-6 h-20 w-20" />
-            <div className="card-border absolute right-14 bottom-10 h-14 w-14" />
+            <div className="dots-grid absolute right-4 top-6 hidden h-20 w-20 md:block" />
+            <div className="card-border absolute right-14 bottom-10 hidden h-14 w-14 md:block" />
             <div className="h-px w-64 bg-[var(--primary)]" />
           </div>
         </div>
@@ -67,7 +67,7 @@ function AboutPage() {
           <span className="text-[var(--primary)]">#</span>
           <span className="text-white">skills</span>
         </div>
-        <div className="mt-8 grid gap-4 md:grid-cols-5">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {skillBlocks.map((block) => (
             <div key={block.title} className="card-border p-2 text-sm">
               <p className="text-white">{block.title}</p>
