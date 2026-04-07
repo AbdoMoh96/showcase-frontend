@@ -1,5 +1,5 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
-import MediaBar from '../components/MediaBar'
+import MediaBar from '../lib/components/MediaBar'
 
 export const Route = createFileRoute('/')({ component: HomePage })
 
@@ -44,7 +44,9 @@ const skills = [
   },
   {
     title: 'Soft Skills',
-    lines: ['Problem Solving, Leadership, Communication, Agile, Team Collaboration'],
+    lines: [
+      'Problem Solving, Leadership, Communication, Agile, Team Collaboration',
+    ],
   },
 ]
 
@@ -127,63 +129,49 @@ const projects = [
     description: 'Corporate website',
     tags: ['Web', 'Frontend'],
     image: projectImage2,
-    actions: [
-      { label: 'Live', href: 'https://www.beltoneholding.com/' },
-    ],
+    actions: [{ label: 'Live', href: 'https://www.beltoneholding.com/' }],
   },
   {
     title: '7EVEN Web App',
     description: 'Customer web application',
     tags: ['Web App'],
     image: projectImage3,
-    actions: [
-      { label: 'Live', href: 'https://www.seven.eg/' },
-    ],
+    actions: [{ label: 'Live', href: 'https://www.seven.eg/' }],
   },
   {
     title: 'Yalla Super Mall',
     description: 'E-commerce platform',
     tags: ['E-commerce'],
     image: projectImage1,
-    actions: [
-      { label: 'Live', href: 'https://yallasupermall.com/' },
-    ],
+    actions: [{ label: 'Live', href: 'https://yallasupermall.com/' }],
   },
   {
     title: 'Shory Insurance',
     description: 'Insurance platform',
     tags: ['Insurance'],
     image: projectImage2,
-    actions: [
-      { label: 'Live', href: 'https://www.shory.com/' },
-    ],
+    actions: [{ label: 'Live', href: 'https://www.shory.com/' }],
   },
   {
     title: 'Aber Insurance',
     description: 'Insurance platform',
     tags: ['Insurance'],
     image: projectImage3,
-    actions: [
-      { label: 'Live', href: 'https://uaeaber.com/en' },
-    ],
+    actions: [{ label: 'Live', href: 'https://uaeaber.com/en' }],
   },
   {
     title: 'Wittify Landing',
     description: 'Product landing page',
     tags: ['AI', 'Landing'],
     image: projectImage1,
-    actions: [
-      { label: 'Live', href: 'https://wittify.ai/' },
-    ],
+    actions: [{ label: 'Live', href: 'https://wittify.ai/' }],
   },
   {
     title: 'Wittify Dashboard',
     description: 'Product dashboard',
     tags: ['AI', 'Dashboard'],
     image: projectImage2,
-    actions: [
-      { label: 'Live', href: 'https://app.wittify.ai/' },
-    ],
+    actions: [{ label: 'Live', href: 'https://app.wittify.ai/' }],
   },
 ]
 
@@ -258,10 +246,12 @@ function HomePage() {
           <div className="max-w-[560px]">
             <h1 className="text-3xl font-semibold text-white md:text-4xl">
               Abdelrahman Mohammed — Senior{' '}
-              <span className="text-[var(--primary)]">Fullstack Developer</span> focused on
-              scalable web platforms
+              <span className="text-[var(--primary)]">Fullstack Developer</span>{' '}
+              focused on scalable web platforms
             </h1>
-            <p className="mt-4 text-sm leading-6 text-[var(--text)]">{summary}</p>
+            <p className="mt-4 text-sm leading-6 text-[var(--text)]">
+              {summary}
+            </p>
             <Link
               to="/contact"
               className="card-border mt-6 inline-flex px-4 py-2 text-sm text-white"
@@ -271,7 +261,11 @@ function HomePage() {
           </div>
           <div className="relative ml-auto w-full max-w-[470px]">
             <div className="absolute left-2 top-2 h-20 w-20 border border-[var(--line)]" />
-            <img src={heroImage} alt="" className="relative z-10 h-auto w-full" />
+            <img
+              src={heroImage}
+              alt=""
+              className="relative z-10 h-auto w-full"
+            />
             <div className="dots-grid absolute right-0 top-20 h-20 w-20" />
           </div>
         </div>
@@ -279,7 +273,9 @@ function HomePage() {
         <div className="card-border mt-6 inline-flex items-center gap-2 px-4 py-2 text-sm">
           <span className="h-4 w-4 bg-[var(--primary)]" />
           <span>
-            <span className="font-medium text-[var(--text)]">Currently working on </span>
+            <span className="font-medium text-[var(--text)]">
+              Currently working on{' '}
+            </span>
             <span className="font-semibold text-white">Portfolio</span>
           </span>
         </div>
@@ -287,8 +283,12 @@ function HomePage() {
 
       <section className="page-wrap mt-16">
         <div className="card-border relative inline-flex items-center gap-4 px-6 py-5">
-          <span className="text-xl text-white">Building user-centric products that scale</span>
-          <span className="absolute -left-2 -top-3 text-2xl text-[var(--text)]">"</span>
+          <span className="text-xl text-white">
+            Building user-centric products that scale
+          </span>
+          <span className="absolute -left-2 -top-3 text-2xl text-[var(--text)]">
+            "
+          </span>
           <span className="absolute right-3 top-10 card-border px-3 py-1 text-xl text-white">
             - Fullstack Developer
           </span>
@@ -321,7 +321,10 @@ function HomePage() {
         </div>
         <div className="mt-8 grid gap-6">
           {experience.map((item) => (
-            <div key={`${item.company}-${item.period}`} className="card-border p-4 text-sm">
+            <div
+              key={`${item.company}-${item.period}`}
+              className="card-border p-4 text-sm"
+            >
               <div className="flex flex-wrap items-center gap-2">
                 <p className="text-white">{item.company}</p>
                 <span className="text-[var(--text)]">{item.period}</span>
@@ -378,12 +381,19 @@ function HomePage() {
           <div className="text-sm leading-6 text-[var(--text)]">
             <p>Hello!</p>
             <p>{summary}</p>
-            <Link to="/about" className="card-border mt-4 inline-flex px-4 py-2 text-sm text-white">
+            <Link
+              to="/about"
+              className="card-border mt-4 inline-flex px-4 py-2 text-sm text-white"
+            >
               Read more -&gt;
             </Link>
           </div>
           <div className="relative">
-            <img src={aboutImage} alt="" className="relative z-10 h-auto w-full" />
+            <img
+              src={aboutImage}
+              alt=""
+              className="relative z-10 h-auto w-full"
+            />
             <div className="dots-grid absolute right-2 top-4 hidden h-20 w-20 md:block" />
             <div className="card-border absolute right-10 bottom-8 hidden h-14 w-14 md:block" />
             <div className="h-px w-64 bg-[var(--primary)]" />
@@ -399,10 +409,15 @@ function HomePage() {
         </div>
         <div className="mt-8 grid gap-6">
           {education.map((item) => (
-            <div key={`${item.school}-${item.degree}`} className="card-border p-4 text-sm">
+            <div
+              key={`${item.school}-${item.degree}`}
+              className="card-border p-4 text-sm"
+            >
               <div className="flex flex-wrap items-center gap-2">
                 <p className="text-white">{item.school}</p>
-                {item.year ? <span className="text-[var(--text)]">{item.year}</span> : null}
+                {item.year ? (
+                  <span className="text-[var(--text)]">{item.year}</span>
+                ) : null}
                 <span className="text-[var(--text)]">{item.location}</span>
               </div>
               <p className="mt-2 text-[var(--text)]">{item.degree}</p>
@@ -419,7 +434,8 @@ function HomePage() {
         </div>
         <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_260px]">
           <p className="text-sm leading-6 text-[var(--text)]">
-            Open to building user-centric products across fintech, insurance, and AI domains.
+            Open to building user-centric products across fintech, insurance,
+            and AI domains.
           </p>
           <div className="card-border p-4 text-sm">
             <p className="text-white">Message me here</p>

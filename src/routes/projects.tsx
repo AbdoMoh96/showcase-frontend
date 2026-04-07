@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import MediaBar from '../components/MediaBar'
+import MediaBar from '../lib/components/MediaBar'
 
 export const Route = createFileRoute('/projects')({ component: ProjectsPage })
 

@@ -1,9 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
-import MediaBar from '../components/MediaBar'
+import MediaBar from '../lib/components/MediaBar'
 
 export const Route = createFileRoute('/contact')({ component: ContactPage })
 
-const iconEmail = 'https://www.figma.com/api/mcp/asset/9476ae69-51ab-43c5-bff7-56e04c2b20dc'
+const iconEmail =
+  'https://www.figma.com/api/mcp/asset/9476ae69-51ab-43c5-bff7-56e04c2b20dc'
 
 function ContactPage() {
   return (
@@ -19,9 +20,9 @@ function ContactPage() {
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_1fr]">
           <p className="text-sm leading-6 text-[var(--text)]">
-            Open to building scalable, high-performance products across fintech, insurance, and
-            AI domains. Reach out to discuss fullstack development, performance optimization,
-            and end-to-end delivery.
+            Open to building scalable, high-performance products across fintech,
+            insurance, and AI domains. Reach out to discuss fullstack
+            development, performance optimization, and end-to-end delivery.
           </p>
           <div className="flex flex-wrap gap-4">
             <div className="card-border p-4 text-sm">
@@ -36,7 +37,10 @@ function ContactPage() {
             <div className="card-border p-4 text-sm">
               <p className="text-white">Social</p>
               <div className="mt-3 space-y-2 text-[var(--text)]">
-                <a href="https://www.linkedin.com/in/abdo-moh96/" className="underline">
+                <a
+                  href="https://www.linkedin.com/in/abdo-moh96/"
+                  className="underline"
+                >
                   linkedin.com/in/abdo-moh96
                 </a>
                 <a href="https://github.com/AbdoMoh96" className="underline">
@@ -47,7 +51,10 @@ function ContactPage() {
           </div>
         </div>
 
-        <form className="mt-12 max-w-[880px]" onSubmit={(event) => event.preventDefault()}>
+        <form
+          className="mt-12 max-w-[880px]"
+          onSubmit={(event) => event.preventDefault()}
+        >
           <div className="grid gap-4 md:grid-cols-2">
             <input
               className="card-border w-full bg-transparent px-4 py-3 text-sm text-white placeholder:text-[var(--text)] outline-none"

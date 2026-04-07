@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import MediaBar from '../components/MediaBar'
+import MediaBar from '../lib/components/MediaBar'
 
 export const Route = createFileRoute('/about')({ component: AboutPage })
 
@@ -36,7 +36,9 @@ const skillBlocks = [
   },
   {
     title: 'Soft Skills',
-    lines: ['Problem Solving, Leadership, Communication, Agile, Team Collaboration'],
+    lines: [
+      'Problem Solving, Leadership, Communication, Agile, Team Collaboration',
+    ],
   },
 ]
 
@@ -58,7 +60,11 @@ function AboutPage() {
             <p>{summary}</p>
           </div>
           <div className="relative">
-            <img src={aboutImage} alt="" className="relative z-10 h-auto w-full" />
+            <img
+              src={aboutImage}
+              alt=""
+              className="relative z-10 h-auto w-full"
+            />
             <div className="dots-grid absolute right-4 top-6 hidden h-20 w-20 md:block" />
             <div className="card-border absolute right-14 bottom-10 hidden h-14 w-14 md:block" />
             <div className="h-px w-64 bg-[var(--primary)]" />
@@ -93,7 +99,10 @@ function AboutPage() {
         </div>
         <div className="mt-6 flex flex-wrap gap-4">
           {['Fintech', 'Insurance', 'AI'].map((domain) => (
-            <div key={domain} className="card-border px-3 py-2 text-sm text-[var(--text)]">
+            <div
+              key={domain}
+              className="card-border px-3 py-2 text-sm text-[var(--text)]"
+            >
               {domain}
             </div>
           ))}
